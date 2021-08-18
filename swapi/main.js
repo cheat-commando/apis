@@ -4,6 +4,10 @@ const currentPlanet = document.querySelector('h1');
 
 const getResidents = () => {
     console.log('button clicked');
+    if (planetName.value === '') {
+        console.log('exit')
+        return
+    }
     currentPlanet.textContent = planetName.value.toUpperCase();
     let currentDisplay = document.querySelectorAll('h2');
     // removes the current list
@@ -14,6 +18,10 @@ const getResidents = () => {
     axios.get(`https://swapi.dev/api/planets?search=${planetName.value}`)
         .then( res => {
             console.log(res)
+            if (res.data.results.length === 0) {
+                currentPlanet.textContent = "I find your lack of Star Wars knowledge disturbing...";
+                return
+            }
             let residents = res.data.results[0].residents;
             if (residents.length === 0) {
                 const forShame = document.createElement('h2');

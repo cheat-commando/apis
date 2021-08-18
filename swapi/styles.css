@@ -1,5 +1,5 @@
 h2 {
-    color: blue
+    color: yellow
 }
 
 button {
@@ -8,4 +8,23 @@ button {
     background-color: black;
     font-family:fantasy;
     position: relative;
+    border-radius: 1rem;
+}
+
+body {
+    background-color: grey;
+    text-align: center;
+}
+
+input {
+    background-color: black;
+    color : yellow;
+    border-radius: 0px
+}
+
+section {
+    display:flex;
+    flex-direction: column;
+    max-width: 20rem;
+    margin: 0 auto;
 }
